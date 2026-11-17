@@ -1,0 +1,8 @@
+{
+  "name": "HealthTime App",
+  "short_name": "HealthTime",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#f43f5e"
+}
