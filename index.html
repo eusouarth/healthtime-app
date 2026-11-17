@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <!-- CABEÇALHO COM A LOGO E O CORAÇÃO -->
+  <!-- CABEÇALHO COM A LOGO -->
   <header class="app-header">
     <div class="logo-container">
       <svg class="logo-heart" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 30px; height: 30px;">
@@ -21,7 +21,7 @@
     <div class="status-badge">Pulseira Conectada</div>
   </header>
 
-  <!-- NAVEGAÇÃO ENTRE TELAS -->
+  <!-- BOTÕES DE NAVEGAÇÃO -->
   <nav class="nav-tabs">
     <button class="tab-btn active" onclick="mudarTela('home')">Monitoramento</button>
     <button class="tab-btn" onclick="mudarTela('historico')">Histórico</button>
@@ -71,7 +71,7 @@
     <div class="card">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
         <h3 class="section-title" style="margin: 0;">Histórico de Alertas</h3>
-        <button onclick="carregarHistoricoDoBanco()" class="btn-demo" style="padding: 4px 10px; font-size: 0.65rem;">🔄 Atualizar</button>
+        <button onclick="carregarHistoricoDoBanco()" class="btn-demo" style="padding: 4px 10px; font-size: 0.65rem;">Atualizar</button>
       </div>
       <p class="section-subtitle">Suas últimas ocorrências registradas.</p>
       <div id="listaHistorico" style="margin-top: 10px; display: flex; flex-direction: column; gap: 8px;">
@@ -82,7 +82,7 @@
     <div class="card" style="margin-top: 14px;">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
         <h3 class="section-title" style="margin: 0;">Observações do médico</h3>
-        <button onclick="carregarObservacoesDoApp()" class="btn-demo" style="padding: 4px 10px; font-size: 0.65rem;">🔄 Atualizar</button>
+        <button onclick="carregarObservacoesDoApp()" class="btn-demo" style="padding: 4px 10px; font-size: 0.65rem;">Atualizar</button>
       </div>
       <p class="section-subtitle">Anotações enviadas pela UBS.</p>
       <div id="listaObservacoes" style="margin-top: 10px; display: flex; flex-direction: column; gap: 8px;">

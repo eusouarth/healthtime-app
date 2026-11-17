@@ -13,12 +13,10 @@ try {
     if ($input) {
         $dataHora = date('d/m/Y H:i:s');
         
-        // 1. Garante primeiro o salvamento no banco local do seu App
         $stmt = $pdo->prepare("INSERT INTO alertas_emergencia (bpm, spo2, tipo_evento, descricao, data_hora) VALUES (?, ?, ?, ?, ?)");
         $stmt->execute([$input['bpm'], $input['spo2'], $input['tipo_evento'], $input['descricao'], $dataHora]);
 
-        // 2. Envia para o Codespaces do Site da Mari via cURL (mais rápido, seguro e sem travar)
-        $urlSiteMari = "https://musical-space-barnacle-g44r4x7w7v44h96x5-8000.app.github.dev/api/receber_alerta.php";
+        $urlSiteMari = "https://healthtimesite.infinityfreeapp.com/api/receber_alerta.php";
         
         $payload = json_encode([
             'bpm' => $input['bpm'],

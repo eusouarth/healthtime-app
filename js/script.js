@@ -31,7 +31,7 @@ function setCenario(novoCenario) {
   const bpmStatusElem = document.getElementById('bpmStatus');
   const alertBanner = document.getElementById('alertBanner');
 
-  // Limpa qualquer cronômetro anterior e destrava o envio para o novo teste
+  // Limpa qualquer cronômetro anterior 
   cancelarAlerta();
   alertaJaEnviado = false;
 
@@ -78,7 +78,7 @@ function dispararAlerta(msg) {
   txtMsg.innerText = msg;
   banner.style.display = 'block';
 
-  let tempo = 5; // Cronômetro ajustado para 5 segundos
+  let tempo = 5; 
   countdown.innerText = tempo;
 
   if (!timerAlerta) {
