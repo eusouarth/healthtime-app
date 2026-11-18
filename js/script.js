@@ -31,7 +31,6 @@ function setCenario(novoCenario) {
   const bpmStatusElem = document.getElementById('bpmStatus');
   const alertBanner = document.getElementById('alertBanner');
 
-  // Limpa qualquer cronômetro anterior 
   cancelarAlerta();
   alertaJaEnviado = false;
 
@@ -122,7 +121,8 @@ function carregarHistoricoDoBanco() {
   if (!lista) return;
   lista.innerHTML = '<p style="font-size: 0.75rem; color: #94a3b8;">Carregando histórico...</p>';
 
-  fetch('api/listar_historico.php')
+  // Adicionado ?t=timestamp e cache: no-store para evitar cache agressivo no mobile
+  fetch(`api/listar_historico.php?t=${Date.now()}`, { cache: 'no-store' })
     .then(res => res.json())
     .then(dados => {
       if (!dados || dados.length === 0) {
@@ -148,7 +148,8 @@ function carregarObservacoesDoApp() {
   if (!lista) return;
   lista.innerHTML = '<p style="font-size: 0.75rem; color: #94a3b8;">Buscando observações...</p>';
 
-  fetch('api/listar_observacoes.php')
+  // Adicionado ?t=timestamp e cache: no-store para evitar cache agressivo no mobile
+  fetch(`api/listar_observacoes.php?t=${Date.now()}`, { cache: 'no-store' })
     .then(res => res.json())
     .then(dados => {
       if (!dados || dados.length === 0) {

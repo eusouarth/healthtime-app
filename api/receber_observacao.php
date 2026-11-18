@@ -2,6 +2,8 @@
 header('Content-Type: application/json; charset=utf-8');
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Content-Type");
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Pragma: no-cache");
 date_default_timezone_set('America/Bahia');
 
 try {
@@ -12,7 +14,7 @@ try {
 
     $input = json_decode(file_get_contents('php://input'), true);
     
-    $textoRecebido = $input['texto'] ?? $input['parecer'] ?? $input['observacao'] ?? null;
+    $textoRecebido = $input['texto'] ?? $input['parecer'] ?? $input['observacao'] ?? $input['mensagem'] ?? null;
 
     if ($textoRecebido) {
         $stmt = $pdo->prepare("INSERT INTO observacoes_medicas (texto, data_hora) VALUES (?, ?)");

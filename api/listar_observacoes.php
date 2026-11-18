@@ -1,6 +1,8 @@
 <?php
 header('Content-Type: application/json; charset=utf-8');
 header("Access-Control-Allow-Origin: *");
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Pragma: no-cache");
 
 try {
     $pdo = new PDO("sqlite:" . __DIR__ . "/../healthtime_app.db");

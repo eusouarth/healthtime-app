@@ -2,6 +2,8 @@
 header('Content-Type: application/json; charset=utf-8');
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Content-Type");
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Pragma: no-cache");
 date_default_timezone_set('America/Bahia');
 
 try {
@@ -16,7 +18,7 @@ try {
         $stmt = $pdo->prepare("INSERT INTO alertas_emergencia (bpm, spo2, tipo_evento, descricao, data_hora) VALUES (?, ?, ?, ?, ?)");
         $stmt->execute([$input['bpm'], $input['spo2'], $input['tipo_evento'], $input['descricao'], $dataHora]);
 
-        $urlSiteMari = "https://healthtimesite.infinityfreeapp.com/api/receber_alerta.php";
+        $urlSiteMari = "https://healthtime-site.onrender.com/api/receber_observacao.php";
         
         $payload = json_encode([
             'bpm' => $input['bpm'],
