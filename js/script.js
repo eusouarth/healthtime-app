@@ -121,7 +121,6 @@ function carregarHistoricoDoBanco() {
   if (!lista) return;
   lista.innerHTML = '<p style="font-size: 0.75rem; color: #94a3b8;">Carregando histórico...</p>';
 
-  // Adicionado ?t=timestamp e cache: no-store para evitar cache agressivo no mobile
   fetch(`api/listar_historico.php?t=${Date.now()}`, { cache: 'no-store' })
     .then(res => res.json())
     .then(dados => {
@@ -148,7 +147,6 @@ function carregarObservacoesDoApp() {
   if (!lista) return;
   lista.innerHTML = '<p style="font-size: 0.75rem; color: #94a3b8;">Buscando observações...</p>';
 
-  // Adicionado ?t=timestamp e cache: no-store para evitar cache agressivo no mobile
   fetch(`api/listar_observacoes.php?t=${Date.now()}`, { cache: 'no-store' })
     .then(res => res.json())
     .then(dados => {

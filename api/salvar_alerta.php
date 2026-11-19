@@ -18,6 +18,7 @@ try {
         $stmt = $pdo->prepare("INSERT INTO alertas_emergencia (bpm, spo2, tipo_evento, descricao, data_hora) VALUES (?, ?, ?, ?, ?)");
         $stmt->execute([$input['bpm'], $input['spo2'], $input['tipo_evento'], $input['descricao'], $dataHora]);
 
+        // URL correta apontando para o arquivo que recebe alerta no site do Render
         $urlSiteMari = "https://healthtime-site.onrender.com/api/receber_alerta.php";
         
         $payload = json_encode([
