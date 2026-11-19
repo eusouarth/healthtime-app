@@ -18,7 +18,7 @@ try {
         $stmt = $pdo->prepare("INSERT INTO alertas_emergencia (bpm, spo2, tipo_evento, descricao, data_hora) VALUES (?, ?, ?, ?, ?)");
         $stmt->execute([$input['bpm'], $input['spo2'], $input['tipo_evento'], $input['descricao'], $dataHora]);
 
-        $urlSiteMari = "https://healthtime-site.onrender.com/api/receber_observacao.php";
+        $urlSiteMari = "https://healthtime-site.onrender.com/api/receber_alerta.php";
         
         $payload = json_encode([
             'bpm' => $input['bpm'],
